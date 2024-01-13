@@ -103,7 +103,7 @@ def procesar_update_perfil(data_form,id):
                         WHERE id_usuario = %s
                     """
                     params = (nombre_usuario,apellido_usuario, id_area, id_rol,
-                                nueva_password,edad, id_user)
+                                nueva_password, edad, id_user)
                     cursor.execute(querySQL, params)
                     conexion_MySQLdb.commit()
             return 1
@@ -118,7 +118,7 @@ def procesar_update_perfil(data_form,id):
     print(id_area+" HOLA "+id_rol)
 
     if not pass_actual and not new_pass_user and not repetir_pass_user:
-            return updatePefilSinPass(id_user, nombre_usuario, apellido_usuario, id_area, id_rol, edad)
+            return updatePefilSinPass(id_user, nombre_usuario, apellido_usuario, id_area, id_rol, edad )
 
     with connectionBD() as conexion_MySQLdb:
         with conexion_MySQLdb.cursor(dictionary=True) as cursor:
